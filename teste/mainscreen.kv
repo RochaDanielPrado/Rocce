@@ -1,0 +1,14 @@
+<MainScreen>
+    name: "mainscreen"
+
+    MDFloatLayout:
+        MDFillRoundFlatButton:
+
+            text: "Entrar"
+            font_size: 20
+            elevation: 8
+            text_color: 1,1,1,1
+            pos_hint: {"center_x": 0.5, "center_y": 0.30}
+            size_hint_x: .5
+            on_release:
+                app.root.current = "janela1"

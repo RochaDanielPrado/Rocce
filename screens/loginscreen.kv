@@ -1,0 +1,70 @@
+<LoginScreen>
+
+    MDFloatLayout:
+
+        MDTopAppBar:
+            md_bg_color: 1,1,1,1
+            pos_hint: {"top":1}
+            left_action_items: [["arrow-left", lambda x: root.callback()]]
+
+        Image:
+            source: "images/LogoRocce 512x512.png"
+            size_hint:(.25, .25)
+            pos_hint: {"center_x": 0.5, "center_y": 0.74}
+
+        MDLabel:
+            text: "Seja bem Vindo!"
+            theme_text_color: "Custom"
+            text_color: 0,0,1,1
+            font_style: "H6"
+            bold: True
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.61}
+
+        MDLabel:
+            text: "Faça o login para continuar"
+            font_style: "Caption"
+            halign: "center"
+            pos_hint: {"center_x": 0.5, "center_y": 0.57}
+
+        MDTextField:
+            hint_text: "Email"
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            size_hint_x: .8
+            icon_right: "email"
+            helper_text: "Ex: user@gmail.com"
+            validator: "email"
+
+        MDTextField:
+            hint_text: "Senha"
+            pos_hint: {"center_x": 0.5, "center_y": 0.42}
+            size_hint_x: .8
+            password: True
+            icon_right: "key-variant"
+
+        MDFillRoundFlatButton:
+            text: "Entrar"
+            font_size: 20
+            elevation: 8
+            text_color: 1,1,1,1
+            pos_hint: {"center_x": 0.5, "center_y": 0.30}
+            size_hint_x: .5
+
+
+        MDFillRoundFlatButton:
+            text: "Entrar com Facebook"
+            font_size: 18
+            elevation: 8
+            text_color: 1,1,1,1
+            md_bg_color: 0.09, 0.47, 0.95, 1
+            pos_hint: {"center_x": 0.5, "center_y": 0.2}
+            size_hint_x: .5
+
+        MDFillRoundFlatButton:
+            text: "Entrar com Google"
+            font_size: 18
+            elevation: 8
+            text_color: 1,1,1,1
+            md_bg_color: 0.80, 0.24, 0.18, 1
+            pos_hint: {"center_x": 0.5, "center_y": 0.1}
+            size_hint_x: .5
