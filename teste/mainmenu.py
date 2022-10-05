@@ -25,16 +25,16 @@ class Janela1(MDScreen):
 class TestApp(MDApp):
     def build(self):
         # self.theme_cls.theme_style= "Dark"
-        self.theme_cls.primary_palette = "Green"
+        self.theme_cls.primary_palette = "Brown"
         self.title = "meu app"
 
-        #sm = ScreenManager()
-        #sm.add_widget(MainScreen(name="mainscreen"))
-        #sm.add_widget(Janela1(name="janela1"))
-        # sm.add_widget(LoginScreen(name="loginscreen"))
+        sm = ScreenManager()
+        sm.add_widget(MainScreen(name="mainscreen"))
+        sm.add_widget(Janela1(name="janela1"))
+        sm.add_widget(LoginScreen(name="loginscreen"))
         # sm.add_widget(SettingsScreen(name='settings'))
 
-        return Builder.load_file("screenmanager.kv")
+        return sm #Builder.load_file("testapp.kv")
 
 
 if __name__ == '__main__':
