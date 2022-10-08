@@ -1,7 +1,9 @@
-import os
+import platform, os
 
-os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
+if platform.system() == 'Windows':
+    os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
+from os.path import join, dirname
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -24,6 +26,7 @@ class Janela1(MDScreen):
 
 class TestApp(MDApp):
     def build(self):
+
         # self.theme_cls.theme_style= "Dark"
         self.theme_cls.primary_palette = "Brown"
         self.title = "meu app"
@@ -36,6 +39,6 @@ class TestApp(MDApp):
 
         return sm #Builder.load_file("testapp.kv")
 
-
 if __name__ == '__main__':
-    TestApp().run()
+    dir_kv = join(dirname(__file__), 'kv_files')
+    TestApp(kv_directory=dir_kv).run()

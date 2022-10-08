@@ -1,8 +1,7 @@
-import os
-os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
-"""
-This is an example of kaki app usin kivymd modules.
-"""
+import platform, os
+
+if platform.system() == 'Windows':
+    os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
 from kivymd.app import MDApp
 from kaki.app import App
