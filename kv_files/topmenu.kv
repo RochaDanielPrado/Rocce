@@ -1,0 +1,19 @@
+<TopMenu>:
+    MDTopAppBar:
+        title: "MDTopAppBar"
+
+        elevation: 10
+        #md_bg_color: 1,1,1,1
+        pos_hint: {"top":1}
+        specific_text_color: 1,1,1,1
+        right_action_items: [["menu", lambda x: app.callback()]]
+        #right_action_items: [["dots-vertical", lambda x: app.callback_1()], ["clock", lambda x: app.callback_2()]]
+
+
+        canvas:
+            Color:
+                rgba: 1,1,1,1
+            Rectangle:
+                pos: (20,760)
+                size: 40,40
+                source: "images/LogoRocce 512x512.png"

@@ -1,7 +1,59 @@
 #: include kv_files/mainscreen.kv
 #: include kv_files/janela1.kv
+#: include kv_files/janela2.kv
+#: include kv_files/bottommenu.kv
+#: include kv_files/topmenu.kv
+#: include kv_files/canvasconfig.kv
 
-<MainScreenManager>:
+<Gerenciador>:
+    Janela2:
+    Janela1:
     MainScreen:
     LoginScreen:
-    Janela1:
+    Sair:
+        name: 'sair'
+    Menu:
+        name: 'menu'
+
+
+<Menu>:
+    BoxLayout:
+        orientation:'vertical'
+        padding:100
+        spacing:50
+        canvas:
+            Color:
+                rgba:1,1,1,1
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+                    source:'moldura.png'
+        Image:
+            source:'images/atencao.png'
+            size_hint_y:None
+            height:300
+            allow_stretch:True
+        Button:
+            text:'Tarefas'
+            #on_release:app.root.current = 'sair'
+            #cor:0.1,0.1,0.1,1
+        Button:
+            text:'Assistente'
+        Button:
+            text:'Sair'
+            on_release: root.confirmacao()
+
+<Sair>:
+    BoxLayout:
+        orientation:'vertical'
+        ActionBar:
+            ActionView:
+                ActionPrevious:
+                    title:'Tarefas'
+                    on_release:app.root.current = 'menu'
+                ActionButton:
+                    text:'Sair'
+                    on_release: app.root.current = 'menu'
+
+
+

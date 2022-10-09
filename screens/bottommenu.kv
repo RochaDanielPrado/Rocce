@@ -1,0 +1,35 @@
+<BottomMenu>:
+    #MDBottomAppBar:
+    MDTopAppBar:
+        title: "Title hot"
+        elevation: 10
+        icon: "home"
+        type: "bottom"
+        set_bars_color: True
+        #specific_text_color: app.theme_cls.accent_color
+        right_action_items:
+            [
+            ["home", lambda x: app.callback(x), "", "Home"],
+            ["message-star", lambda x: app.callback(x), "", "Message star"],
+            ["message-question", lambda x: app.callback(x), "" , "Message question"],
+            ["account-star", lambda x: app.callback(x), "", "Message reply"],
+            ]
+        md_bg_bottom_color: 0, 1, 0, 1
+        icon_color: self.md_bg_bottom_color
+
+        #mode: "free-end"
+
+    MDBottomNavigation:
+        panel_color: app.theme_cls.primary_color
+        text_color_active: .2, .2, .2, 1
+        text_color_normal: .9, .9, .9, 1
+        use_text: False
+
+        MDBottomNavigationItem:
+            icon: 'gmail'
+
+        MDBottomNavigationItem:
+            icon: 'twitter'
+
+        MDBottomNavigationItem:
+            icon: 'youtube'

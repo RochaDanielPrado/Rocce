@@ -1,11 +1,11 @@
-<Janela1>
-    name: "janela1"
-    MDFloatLayout:
+<Janela1>:
+    CanvasConfig:
 
-        MDTopAppBar:
-            md_bg_color: 1,1,1,1
-            pos_hint: {"top":1}
-            left_action_items: [["arrow-left", lambda x: root.callback()]]
+    MDFloatLayout:
+        TopMenu:
+        BottomMenu:
+
+    MDFloatLayout:
 
         Image:
             source: "images/LogoRocce 512x512.png"
@@ -71,3 +71,4 @@
             md_bg_color: 0.80, 0.24, 0.18, 1
             pos_hint: {"center_x": 0.5, "center_y": 0.1}
             size_hint_x: .5
+            on_release: app.root.get_screen("menu").confirmacao()

@@ -16,13 +16,13 @@ class LiveApp(MDApp, App):
     # *.kv files to watch
     KV_FILES = {
         os.path.join(os.getcwd(), "screens/screenmanager.kv"),
-        os.path.join(os.getcwd(), "screens/loginscreen.kv"),
+        os.path.join(os.getcwd(), "screens/bottommenu.kv"),
     }
 
     # class to watch from *.py files
     CLASSES = {
         "MainScreenManager": "screens.screenmanager",
-        "LoginScreen": "screens.loginscreen",
+        "BottomMenu": "screens.bottommenu",
     }
 
     # auto reload path

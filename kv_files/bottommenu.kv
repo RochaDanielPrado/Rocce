@@ -1,0 +1,18 @@
+<BottomMenu>:
+    MDBottomAppBar:
+        #md_bg_color: app.theme_cls.accent_color
+        MDTopAppBar:
+            title: "Title Bottom"
+            elevation: 10
+            icon: "page-previous-outline"
+            type: "bottom"
+
+            specific_text_color: 1,1,1,1
+            right_action_items:
+                [
+                ["home", lambda x: app.callback(x), "", "Home"],
+                ["message-star", lambda x: app.callback(x), "", "Message star"],
+                ["message-question", lambda x: app.callback(x), "" , "Message question"],
+                ["account-star", lambda x: app.callback(x), "", "Message reply"],
+                ]
+            mode: "free-end"
