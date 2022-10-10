@@ -1,17 +1,23 @@
-<BottomMenu>:
-    Tarefas:
+<Janela3>:
+    CanvasConfig:
+    MDBoxLayout:
+        orientation:'vertical'
+        TopMenu:
+        Tarefas:
+        BottomMenu:
 
 <Tarefas>:
-    BoxLayout:
+    MDBoxLayout:
         orientation:'vertical'
-        ActionBar:
-            ActionView:
-                ActionPrevious:
-                    title:'Tarefas'
-                    on_release:app.root.current = 'menu'
-                ActionButton:
-                    text:'Sair'
-                    on_release:app.stop()
+
+        #ActionBar:
+         #   ActionView:
+          #      ActionPrevious:
+           #         title:'Tarefas'
+             #       on_release:app.root.current = 'menu'
+            #    ActionButton:
+             #       text:'Sair'
+              #      on_release:app.stop()
         ScrollView:
             BoxLayout:
                 id:box
@@ -29,14 +35,16 @@
                 width:60
                 on_release:root.addWidget()
 
+
+
 <Tarefa>:
     size_hint_y:None
-    height:200
-    Label:
+    height:20
+    MDLabel:
         id:label
-        font_size:30
+        font_size:15
     Button:
         text:'X'
         size_hint_x:None
         width:60
-        on_release:app.root.get_screen('tarefas').removeWidget(root)
+        on_release:app.root.get_screen('janela3').removeWidget(root)

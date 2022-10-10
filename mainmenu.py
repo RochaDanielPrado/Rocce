@@ -8,6 +8,7 @@ from kivymd.app import MDApp
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 from kivymd.uix.screen import MDScreen
+from kivymd.uix.toolbar import MDTopAppBar
 from kivy.uix.image import AsyncImage, Image
 from kivy.uix.button import Button
 from kivy.uix.popup import Popup
@@ -25,9 +26,9 @@ class Gerenciador(ScreenManager):
 class CanvasConfig(Screen):
     pass
 
-class TopMenu(MDScreen):
+class TopMenu(MDTopAppBar):
     pass
-class BottomMenu(MDScreen):
+class BottomMenu(MDTopAppBar):
     pass
 class Menu(Screen):
     def on_pre_enter(self):
@@ -54,6 +55,8 @@ class Menu(Screen):
         pop.open()
         return True
 
+class Tarefaxx(Screen):
+    pass
 class Tarefas(Screen):
     tarefas = []
     path = ''
@@ -126,6 +129,9 @@ class Janela1(Screen):
 class Janela2(Screen):
     pass
 
+class Janela3(Screen):
+    pass
+
 class external_image(AsyncImage):
     pass
 
@@ -142,7 +148,7 @@ class TestApp(MDApp):
         sm = Gerenciador(transition=NoTransition())
         sm.add_widget(MainScreen(name="mainscreen"))
         sm.add_widget(Janela1(name="janela1"))
-        sm.add_widget(LoginScreen(name="Tarefas"))
+        sm.add_widget(LoginScreen(name="Janela3"))
         # sm.add_widget(SettingsScreen(name='settings'))
 
         return sm  # Builder.load_file("testapp.kv")
