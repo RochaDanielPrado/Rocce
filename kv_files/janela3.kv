@@ -2,6 +2,7 @@
     CanvasConfig:
     MDBoxLayout:
         orientation:'vertical'
+        spacing:10
         TopMenu:
         Tarefas:
         BottomMenu:
@@ -9,6 +10,7 @@
 <Tarefas>:
     MDBoxLayout:
         orientation:'vertical'
+
 
         #ActionBar:
          #   ActionView:
@@ -22,17 +24,20 @@
             BoxLayout:
                 id:box
                 orientation:'vertical'
+                padding: [10,0]
                 size_hint_y:None
                 height:self.minimum_height
         BoxLayout:
             size_hint_y:None
-            height:60
+            height:30
+            padding: [10,0]
+
             TextInput:
                 id:texto
             Button:
                 text:'+'
-                size_hint_x:None
-                width:60
+                size_hint_x: None
+                width:30
                 on_release:root.addWidget()
 
 
@@ -46,5 +51,5 @@
     Button:
         text:'X'
         size_hint_x:None
-        width:60
+        width:30
         on_release:app.root.get_screen('janela3').removeWidget(root)

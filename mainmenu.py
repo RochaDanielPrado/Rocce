@@ -31,8 +31,8 @@ class TopMenu(MDTopAppBar):
 class BottomMenu(MDTopAppBar):
     pass
 class Menu(Screen):
-    def on_pre_enter(self):
-        Window.bind(on_request_close=self.confirmacao)
+    #def on_pre_enter(self):
+     #   Window.bind(on_request_close=self.confirmacao)
     def confirmacao(self, *args):
         box = BoxLayout(orientation='vertical', padding=10, spacing=10)
         botoes = BoxLayout(padding=10, spacing=10)
@@ -66,7 +66,7 @@ class Tarefas(Screen):
         self.loadData()
         for tarefa in self.tarefas:
             self.ids.box.add_widget(Tarefa(text=tarefa))
-
+        print('entrou')
     def loadData(self, *args):
         try:
             with open(self.path+'data.json', 'r') as data:
