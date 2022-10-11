@@ -10,7 +10,7 @@
         specific_text_color: 1,1,1,1
         right_action_items:
             [
-            ["home", lambda x: app.callback(x), "", "Home"],
+            ["home", lambda x: app.set_screen('mainscreen'), "", "Home"],
             ["message-star", lambda x: app.callback(x), "", "Message star"],
             ["message-question", lambda x: app.callback(x), "" , "Message question"],
             ["account-star", lambda x: app.callback(x), "", "Message reply"],

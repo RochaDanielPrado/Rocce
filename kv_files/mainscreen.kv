@@ -1,18 +1,39 @@
 <MainScreen>:
     CanvasConfig:
 
-    MDFloatLayout:
-        #BottomMenu:
+    TopMenu:
+        pos_hint: {'top':1}
 
     MDFloatLayout:
         MDFillRoundFlatButton:
 
-            text: "Entrar"
+            text: "Janela1"
+            font_size: 20
+            elevation: 8
+            text_color: 1,1,1,1
+            pos_hint: {"center_x": 0.5, "center_y": 0.70}
+            size_hint_x: .5
+            on_release:
+                app.root.current = "janela1"
+        MDFillRoundFlatButton:
+
+            text: "Janela2"
+            font_size: 20
+            elevation: 8
+            text_color: 1,1,1,1
+            pos_hint: {"center_x": 0.5, "center_y": 0.50}
+            size_hint_x: .5
+            on_release:
+                app.root.current = "janela2"
+
+        MDFillRoundFlatButton:
+
+            text: "Janela3"
             font_size: 20
             elevation: 8
             text_color: 1,1,1,1
             pos_hint: {"center_x": 0.5, "center_y": 0.30}
             size_hint_x: .5
             on_release:
-                app.root.current = "janela1"
-
+                app.root.current = "janela3"
+    BottomMenu:
