@@ -8,7 +8,7 @@
         pos_hint: {"top":1}
         specific_text_color: 1,1,1,1
         right_action_items: [["menu", lambda x: app.callback()]]
-        #right_action_items: [["dots-vertical", lambda x: app.callback_1()], ["clock", lambda x: app.callback_2()]]
+        right_action_items: [["dots-vertical", lambda x: app.callback_1()], ["clock", lambda x: app.root.callback_2('mainmenu')]]
 
 
         canvas:

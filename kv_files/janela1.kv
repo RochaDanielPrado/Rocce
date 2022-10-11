@@ -1,19 +1,16 @@
 <Janela1>:
-    CanvasConfig:
 
     MDFloatLayout:
+
         TopMenu:
-        BottomMenu:
-
-    MDFloatLayout:
-
+            pos_hint: {"top": 1}
         Image:
             source: "images/LogoRocce 512x512.png"
             size_hint:(.25, .25)
             pos_hint: {"center_x": 0.5, "center_y": 0.74}
 
         MDLabel:
-            text: "JANELA 1"
+            text: "Seja bem Vindo!"
             theme_text_color: "Custom"
             text_color: 0,0,1,1
             font_style: "H6"
@@ -49,8 +46,7 @@
             text_color: 1,1,1,1
             pos_hint: {"center_x": 0.5, "center_y": 0.30}
             size_hint_x: .5
-            on_release:
-                app.root.current = "mainscreen"
+
 
         MDFillRoundFlatButton:
             text: "Entrar com Facebook"
@@ -60,8 +56,6 @@
             md_bg_color: 0.09, 0.47, 0.95, 1
             pos_hint: {"center_x": 0.5, "center_y": 0.2}
             size_hint_x: .5
-            on_release:
-                app.root.current = "loginscreen"
 
         MDFillRoundFlatButton:
             text: "Entrar com Google"
@@ -71,4 +65,6 @@
             md_bg_color: 0.80, 0.24, 0.18, 1
             pos_hint: {"center_x": 0.5, "center_y": 0.1}
             size_hint_x: .5
-            on_release: app.root.get_screen("menu").confirmacao()
+            on_release: app.root.current = 'mainscreen'
+
+        BottomMenu:

@@ -4,49 +4,48 @@
         orientation:'vertical'
         spacing:10
         TopMenu:
-        Tarefas:
+
+
+        MDBoxLayout:
+            orientation:'vertical'
+
+
+            #ActionBar:
+             #   ActionView:
+              #      ActionPrevious:
+               #         title:'Tarefas'
+                 #       on_release:app.root.current = 'menu'
+                #    ActionButton:
+                 #       text:'Sair'
+                  #      on_release:app.stop()
+            ScrollView:
+                BoxLayout:
+                    id: boxid
+                    orientation:'vertical'
+                    padding: [10,0]
+                    size_hint_y:None
+                    height:self.minimum_height
+            BoxLayout:
+                size_hint_y:None
+                height:30
+                padding: [10,0]
+
+                TextInput:
+                    id: texto
+                Button:
+                    text:'+'
+                    size_hint_x: None
+                    width:30
+                    on_release:root.addWidget()
+
+
         BottomMenu:
 
-<Tarefas>:
-    MDBoxLayout:
-        orientation:'vertical'
-
-
-        #ActionBar:
-         #   ActionView:
-          #      ActionPrevious:
-           #         title:'Tarefas'
-             #       on_release:app.root.current = 'menu'
-            #    ActionButton:
-             #       text:'Sair'
-              #      on_release:app.stop()
-        ScrollView:
-            BoxLayout:
-                id:box
-                orientation:'vertical'
-                padding: [10,0]
-                size_hint_y:None
-                height:self.minimum_height
-        BoxLayout:
-            size_hint_y:None
-            height:30
-            padding: [10,0]
-
-            TextInput:
-                id:texto
-            Button:
-                text:'+'
-                size_hint_x: None
-                width:30
-                on_release:root.addWidget()
-
-
-
-<Tarefa>:
+<Insert>:
     size_hint_y:None
     height:20
     MDLabel:
-        id:label
+        id: label
         font_size:15
     Button:
         text:'X'
