@@ -6,6 +6,7 @@ if platform.system() == 'Windows':
 from os.path import join, dirname
 from kivymd.app import MDApp
 from kivy.app import App
+from kivy.factory import Factory
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 from kivymd.uix.screen import MDScreen
 from kivymd.uix.toolbar import MDTopAppBar
@@ -21,22 +22,35 @@ import json
 
 
 class Gerenciador(ScreenManager):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
     pass
 
 
 class CanvasConfig(Widget):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
     pass
 
 
 class TopMenu(MDTopAppBar):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+    def callback(self, instance):
+        print('The button has been pressed')
     pass
 
 
 class BottomMenu(MDTopAppBar):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
     pass
 
 
 class Menu(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
     # def on_pre_enter(self):
     #   Window.bind(on_request_close=self.confirmacao)
     def confirmacao(self, *args):
@@ -80,77 +94,9 @@ class Sair(Screen):
         Window.unbind(on_keyboard=self.voltar)
 
 
-class MainScreen(Screen):
-    pass
-
-
-class LoginScreen(Screen):
-    pass
-
-
-class Janela1(Screen):
-    pass
-
-
-class Janela2(Screen):
-    pass
-
-
-class Janela3(Screen):
-    registros = []
-    path = ''
-
-    def voltar(self, window, key, *args):
-        if key == 27:
-            App.get_running_app().root.current = 'menu'
-            return True
-
-    def on_pre_enter(self):
-        Window.bind(on_keyboard=self.voltar)
-
-        self.path = App.get_running_app().user_data_dir
-        self.loadData()
-        print(self.registros)
-        for reg in self.registros:
-            #print(reg)
-            self.ids.boxid.add_widget(Insert(text=reg))
-
-    def loadData(self, *args):
-        try:
-            file = os.path.join(App.get_running_app().user_data_dir, 'data.json')
-            with open(file, 'r') as data:
-                self.registros = json.load(data)
-
-        except FileNotFoundError:
-            pass
-
-    def saveData(self, *args):
-        file = os.path.join(App.get_running_app().user_data_dir, 'data.json')
-        with open(file, 'w') as data:
-            json.dump(self.registros, data)
-
-    def removeWidget(self, tarefa):
-        texto = tarefa.ids.label.text
-        self.ids.boxid.remove_widget(tarefa)
-        self.registros.remove(texto)
-        self.saveData()
-
-    def addWidget(self):
-        texto = self.ids.texto.text
-        self.ids.boxid.add_widget(Insert(text=texto))
-        self.ids.texto.text = ''
-        self.registros.append(texto)
-        self.saveData()
-
-    def on_pre_leave(self):
-        Window.unbind(on_keyboard=self.voltar)
-class Insert(BoxLayout):
-    def __init__(self, text='', **kwargs):
-        super(Insert, self).__init__(**kwargs)
-        self.ids.label.text = text
-
-
 class external_image(AsyncImage):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
     pass
 
 
@@ -162,11 +108,16 @@ class TestApp(MDApp):
         self.title = "meu app daniel"
         Window.size = (375, 600)  # iphone 11 Pro (375, 812)
 
+        Factory.register('MainScreen', module='modules.mainscreen')
+        Factory.register('LoginScreen', module='modules.loginscreen')
+        Factory.register('Janela2', module='modules.janela2')
+        Factory.register('Janela3', module='modules.janela3')
+
         sm = Gerenciador(transition=NoTransition())
-        sm.add_widget(MainScreen(name="mainscreen"))
-        sm.add_widget(Janela1(name="janela1"))
-        sm.add_widget(Janela2(name="janela2"))
-        sm.add_widget(Janela3(name="janela3"))
+        #sm.add_widget(MainScreen(name="mainscreen"))
+        #sm.add_widget(Janela1(name="janela1"))
+        #sm.add_widget(Janela2(name="janela2"))
+        #sm.add_widget(Janela3(name="janela3"))
         # sm.add_widget(SettingsScreen(name='settings'))
 
         return sm  # Builder.load_file("testapp.kv")

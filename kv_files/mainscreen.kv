@@ -1,4 +1,5 @@
 <MainScreen>:
+    name:'mainscreen'
     CanvasConfig:
 
     TopMenu:
@@ -7,14 +8,14 @@
     MDFloatLayout:
         MDFillRoundFlatButton:
 
-            text: "Janela1"
+            text: "LoginScreen"
             font_size: 20
             elevation: 8
             text_color: 1,1,1,1
             pos_hint: {"center_x": 0.5, "center_y": 0.70}
             size_hint_x: .5
             on_release:
-                app.root.current = "janela1"
+                app.root.current = "loginscreen"
         MDFillRoundFlatButton:
 
             text: "Janela2"
