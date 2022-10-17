@@ -5,19 +5,89 @@
         orientation:'vertical'
         spacing:10
         TopMenu:
-        MDBoxLayout:
-            MDScrollView:
+
+        MDScrollView:
+            size: self.size
+
+            MDGridLayout:
+                size_hint_y: None
+                height: self.minimum_height
+                width: self.minimum_width
+                cols: 2
+#                spacing: '20dp'
+                #padding: [10,0,10,0]
+
                 MDList:
                     id: scroll
 
-
-
+                MDList:
+                    id: box
+                    size_hint_x: None
+                    width: self.parent.width * .25
+                    #size_hint_y:.5
+                    #padding: [10,10,10,10]
+#                    size_hint_y: None
+#                    height:self.minimum_height
+#                    width: self.minimum_width
     BottomMenu:
 
 
 
 <ListItemWithCheckbox>:
-    #IconLeftWidget:
-     #   icon: root.icon
+#    id: txt
+#    text: 'textodfdfdfdf'
+#    secondary_text: "Secondary text here"
+#    tertiary_text: "fit more text than usual"
+#
+#    ImageLeftWidget:
+#        source:"images/atencao.png"
 
-    RightCheckbox:
+    #RightCheckbox:
+
+<Quantidade>:
+
+    #MDGridLayout:
+    #orientation:'vertical'
+    cols:1
+    #md_bg_color: 0,1,1,1
+    #pos_hint: {'right':1}
+    spacing: '2dp'
+    #padding: [10,0,20,0]
+
+    MDGridLayout:
+        cols:2
+        size_hint_x: None
+        pos_hint: {'center_x':.9}
+        width: self.parent.width
+        padding:10
+
+        #md_bg_color: 0,1,1,.5
+        MDLabel:
+            id: label1
+            text: ''
+            size_hint_x:None
+            width: 30
+            md_bg_color: .9,.9,.9,.5
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            halign:'center'
+            radius:10
+
+        MDGridLayout:
+            cols:1
+            size_hint_x: None
+            width: self.parent.width
+            padding:0
+
+            MDIconButton:
+                icon: "plus-box-outline"
+                size_hint_x: None
+                width: self.parent.minimum_width
+                halign:'left'
+                on_release: root.n_plus()
+            MDIconButton:
+                icon: "minus-box-outline"
+                halign:'left'
+                size_hint_x: None
+                width: self.parent.minimum_width
+                on_release: root.n_minus()
