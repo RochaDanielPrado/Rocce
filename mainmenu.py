@@ -102,8 +102,8 @@ class external_image(AsyncImage):
 
 class TestApp(MDApp):
     def build(self):
-        self.theme_cls.theme_style = "Dark"
-        self.theme_cls.primary_palette = "Green"
+        #self.theme_cls.theme_style = "Dark"
+        self.theme_cls.primary_palette = "BlueGray"
         self.set_bars_colors()
         self.title = "meu app daniel"
         Window.size = (375, 600)  # iphone 11 Pro (375, 812)
@@ -113,6 +113,7 @@ class TestApp(MDApp):
         Factory.register('LoginScreen', module='modules.loginscreen')
         Factory.register('Janela2', module='modules.janela2')
         Factory.register('Janela3', module='modules.janela3')
+        Factory.register('Janela4', module='modules.janela4')
 
         sm = Gerenciador(transition=NoTransition())
         #sm.add_widget(MainScreen(name="mainscreen"))
